@@ -13,9 +13,6 @@ const index = (props) => {
 
     return (
         <div className = "home-container">
-
-        <BackgroundCanvas />
-
             <div className = 'login'>
                 <div className = 'logos'> 
                     <div className = 'logos-bg'></div>
@@ -29,6 +26,7 @@ const index = (props) => {
                     <Gobutton>免费注册</Gobutton>
                 </div>
             </div>
+            <BackgroundCanvas />
         </div>
     );
 }
