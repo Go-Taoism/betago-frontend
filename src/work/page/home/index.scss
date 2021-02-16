@@ -1,0 +1,46 @@
+@import "../../style/ztao";
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  // .canvas {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  .login {
+    width: 60vw;
+    height: 100%;
+    background: url('../../images/white_bg.8195cd68.png');
+    background-repeat: no-repeat;
+    background-size: 60vw 100vh;
+    padding: 250px 0 0 10vw;
+    box-sizing: border-box;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    &-bg {
+      width: 180px;
+      height: 100px;
+      background: url('../../images/logo.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  .title {
+    color: rgb(159, 185, 192);
+    font-size: 30px;
+  }
+  .sub-title {
+    color: rgb(159, 185, 192);
+    font-size: 25px;
+  }
+  .button-wrapper {
+    margin-top: 30px;
+  }
+}
