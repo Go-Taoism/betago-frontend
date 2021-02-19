@@ -1,0 +1,21 @@
+.logos {
+    display: flex;
+    align-items: center;
+  }
+
+  .logos-bg {
+    width: 180px;
+    height: 100px;
+    background: url('../../assets/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .title {
+    color: rgb(159, 185, 192);
+    font-size: 30px;
+  }
+  .sub-title {
+    color: rgb(159, 185, 192);
+    font-size: 25px;
+  }

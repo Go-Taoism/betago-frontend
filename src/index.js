@@ -1,25 +1,21 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './routes';
-import "./work/style/ztao.scss"
-import {is_mock} from '../config';
-import {configure} from 'mobx';
-import {Provider} from 'mobx-react';
-import userStore from '@mobx'
-import test from '@mobx/tests';
-
-const stores = {
-    userStore, test
-};
-if(is_mock){
-    require("@mock")
-
-}
-configure({'enforceActions': 'always'});
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './router/router';
+import { Provider } from "mobx-react";
+import stores from "./store";
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  <React.StrictMode>
     <Provider {...stores}>
-        <App/>
+      <App />
     </Provider>,
-    document.getElementById('root')
+  </React.StrictMode>,
+  document.getElementById('root')
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
