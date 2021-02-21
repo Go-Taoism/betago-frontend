@@ -4,6 +4,7 @@ import {history} from 'react-router';
 import Home from '../page/home';
 import Login from '../page/login';
 import Register from '../page/register';
+import Room from '../page/rooms';
 class App extends Component {
   render() {
     return (
@@ -11,6 +12,7 @@ class App extends Component {
           <Route exact path={`/`} component={Home} />
           <Route path={`/login`} component={Login} />
           <Route path={`/register`} component={Register} />
+          <Route path={`/room`} component={Room} />
       </BrowserRouter>
     );
   }

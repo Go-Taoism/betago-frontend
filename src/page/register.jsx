@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import Logo from '../component/logo/index';
 import BackgroundCanvas from '../component/canvas/login-bg';
+import { registerApi } from '../api/index';
 
 const layout = {
     labelCol: { span: 8 },
@@ -35,8 +36,18 @@ class Register extends Component {
     this.state = {}
   }
 
-  onFinish = (values) => {
+  onFinish = async(values) => {
     console.log('Success:', values)
+    let payload = {
+      ...values,
+      name: values.username
+    }
+    let res = await registerApi(payload);
+    console.log(res)
+    message.info(res.data.message)
+    if (res.data.user) {
+      this.props.history.push('/login');
+    }
   }
 
   onFinishFailed = (errorInfo) => {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Form, Input, Button, Checkbox } from 'antd';
 import Logo from '../component/logo/index';
 import BackgroundCanvas from '../component/canvas/login-bg';
+import { loginApi } from '../api/index';
 
 const layout = {
     labelCol: { span: 8 },
@@ -35,8 +36,17 @@ class Login extends Component {
     this.state = {}
   }
 
-  onFinish = (values) => {
-    console.log('Success:', values)
+  onFinish = async(values) => {
+    // console.log('Success:', values)
+    let payload = {
+      ...values,
+      name: values.username
+    }
+    let res = (await loginApi(payload)).data;
+    if (res.token) {
+      localStorage.setItem('access_token', res.token);
+      this.props.history.push('/room');
+    }
   }
 
   onFinishFailed = (errorInfo) => {

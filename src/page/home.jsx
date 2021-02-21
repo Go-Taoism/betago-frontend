@@ -39,6 +39,13 @@ class Home extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    let token = localStorage.getItem('access_token');
+    if (token) {
+      this.props.history.push('/room')
+    } 
+  }
+
   login = () => {
     this.props.history.push('./login')
   }
